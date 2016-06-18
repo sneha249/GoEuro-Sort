@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="43280" started-at="2016-06-18T16:23:35Z" finished-at="2016-06-18T16:24:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="43280" started-at="2016-06-18T16:23:35Z" finished-at="2016-06-18T16:24:18Z">
+      <class name="goeuro.search.sort.MainTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:goeuro.search.sort.MainTest@35bbe5e8]" name="setup" is-config="true" duration-ms="15001" started-at="2016-06-18T21:53:35Z" finished-at="2016-06-18T21:53:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Test_For_Train_PriceList()[pri:0, instance:goeuro.search.sort.MainTest@35bbe5e8]" name="Test_For_Train_PriceList" duration-ms="27965" started-at="2016-06-18T21:53:50Z" description="Test to validate price sort from low to high" finished-at="2016-06-18T21:54:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_For_Train_PriceList -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:goeuro.search.sort.MainTest@35bbe5e8]" name="tearDown" is-config="true" duration-ms="299" started-at="2016-06-18T21:54:18Z" finished-at="2016-06-18T21:54:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- goeuro.search.sort.MainTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
