@@ -2,18 +2,14 @@ package goeuro.search.sort;
 
 import goeuro.page.object.GoEuroResultPage;
 import goeuro.page.object.GoEuroSearchPage;
+import goeuro.utils.LoggingUtil;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,11 +18,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class MainTest.
  */
 public class MainTest {
+	private static java.util.logging.Logger LOG = LoggingUtil.createLogger(
+			MainTest.class, "MainTest", true);
 	
 	/** The driver. */
 	WebDriver driver;
@@ -57,6 +57,7 @@ public class MainTest {
 	{
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		LOG.info("Launching the URL :" + GoEuroConstants.baseURL);
 		driver.get(GoEuroConstants.baseURL);
 		driver.manage().window().maximize();
 		w=new WebDriverWait(driver, 10);
@@ -77,6 +78,7 @@ public class MainTest {
 		
 		goeurosearchpage.setFromCity(GoEuroConstants.from_Country);
 		goeurosearchpage.setToCity(GoEuroConstants.to_Country);
+		LOG.info("Entered the from and to cities :" + GoEuroConstants.from_Country +" and " + GoEuroConstants.to_Country);
 		
 		// Issues with click , hence having redundant code
 		
@@ -84,6 +86,7 @@ public class MainTest {
 		goeurosearchpage.clickSearch();
 		goeurosearchpage.searchButton.click();
 		goeurosearchpage.searchButton.sendKeys(Keys.ENTER);
+		LOG.info("Clicked Search button");
 		
 		List<WebElement> elements = goeuroresultpage.getResultGrid();
 		price_Validation(elements);
@@ -96,16 +99,14 @@ public class MainTest {
 	 * @param elements the elements
 	 */
 	public void price_Validation(List<WebElement> elements){
-		//System.out.println(Arrays.toString(elements.toArray()));
-		
 		for(int i=0;i<=elements.size()-2;i++){
 			price1 =goeuroresultpage.getPrice(elements.get(i));
 			price2 =goeuroresultpage.getPrice(elements.get(i+1));
-			System.out.println("The price for row" + (i+1) + " : "+price1);
+			LOG.info("The price for row" + (i+1) + " : "+price1);
 			int result=Float.compare(price1, price2);
 			sft.assertTrue(result == 0 || result < 0 ,"Price for row " +i+" : " + price1 + ". Price for row " + (i+1) +": " +price2 + "Result is : " + result);
 		}
-		System.out.println("The price for row" +elements.size() + " : "+price2);
+		LOG.info("The price for row" +elements.size() + " : "+price2);
 		sft.assertAll();
 	}
 		

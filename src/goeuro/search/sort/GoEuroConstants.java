@@ -15,4 +15,9 @@ public class GoEuroConstants {
 	/** The Constant to_Country. */
 	public static final String to_Country="Prague, Czech Republic";
 	
+	public static final String user_dir=System.getProperty("user.dir");
+
+	
+	public static final String separator = System.getProperty("file.separator");
+	
 }
