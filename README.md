@@ -5,6 +5,7 @@
 #Java (1.8),TestNG,Logger
 
 #Instructions for executing the test
+#Import the project as a maven project
 #Run the testng.xml in SuiteXML folder.
 
 #Details on the java files

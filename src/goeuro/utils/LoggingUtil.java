@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class LoggingUtil.
  */
@@ -25,7 +25,8 @@ public class LoggingUtil {
  	 * @param append the append
  	 * @return new LOGGER instance
  	 */
-    public final static java.util.logging.Logger createLogger(Class classname, String filename,
+    @SuppressWarnings("rawtypes")
+	public final static java.util.logging.Logger createLogger(Class classname, String filename,
                                                               boolean append) {
 
         SimpleDateFormat date_format = new SimpleDateFormat("dd-MM-yyyy");

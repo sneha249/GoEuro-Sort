@@ -1,6 +1,5 @@
 package goeuro.search.sort;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GoEuroContants.
  */

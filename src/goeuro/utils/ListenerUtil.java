@@ -3,7 +3,6 @@ package goeuro.utils;
 	import org.testng.ITestResult;
 	import org.testng.TestListenerAdapter;
 
-	// TODO: Auto-generated Javadoc
 /**
 	 * The Class ListenerUtil.
 	 */
