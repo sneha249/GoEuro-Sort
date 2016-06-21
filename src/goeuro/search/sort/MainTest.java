@@ -2,7 +2,7 @@ package goeuro.search.sort;
 
 import goeuro.page.object.GoEuroResultPage;
 import goeuro.page.object.GoEuroSearchPage;
-import goeuro.utils.LoggingUtil;
+import goeuro.utils.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -11,12 +11,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+ 
 
 
 
@@ -24,9 +27,12 @@ import org.testng.asserts.SoftAssert;
 /**
  * The Class MainTest.
  */
+@Listeners(ListenerUtil.class)
 public class MainTest {
+	
+	/** The log. */
 	private static java.util.logging.Logger LOG = LoggingUtil.createLogger(
-			MainTest.class, "MainTest", true);
+			MainTest.class, "GoEuroTest", true);
 	
 	/** The driver. */
 	WebDriver driver;
@@ -51,6 +57,7 @@ public class MainTest {
 	
 	/**
 	 * Setup.
+	 * Launches the URl. Defines the implicit timeout
 	 */
 	@BeforeTest
 	public void setup()
@@ -67,9 +74,10 @@ public class MainTest {
 	
 	/**
 	 * Search_ for_ flight.
-	 *
+	 *This enters the city details and makes a search
 	 * 
 	 */
+	
 	@Test(priority=0,description="Test to validate price sort from low to high")
 	public void Test_For_Train_PriceList()
 	{
@@ -80,7 +88,8 @@ public class MainTest {
 		goeurosearchpage.setToCity(GoEuroConstants.to_Country);
 		LOG.info("Entered the from and to cities :" + GoEuroConstants.from_Country +" and " + GoEuroConstants.to_Country);
 		
-		// Issues with click , hence having redundant code
+		
+		// Issues with click , hence having redundant code. Looks like compatibility issue with the firefox version I am using 45.0.1
 		
 		w.until(ExpectedConditions.elementToBeClickable(goeurosearchpage.searchButton));
 		goeurosearchpage.clickSearch();
@@ -95,7 +104,7 @@ public class MainTest {
 
 	/**
 	 * Price_ validation.
-	 *
+	 *This is to validate the prices displayed in the result. The prices should be in ascending order
 	 * @param elements the elements
 	 */
 	public void price_Validation(List<WebElement> elements){

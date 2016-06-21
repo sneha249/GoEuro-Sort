@@ -30,6 +30,12 @@ public class GoEuroResultPage {
 	return priceTable.findElements(By.cssSelector(".result"));
 	}
 	
+	/**
+	 * Gets the price.
+	 *
+	 * @param element the element
+	 * @return the price
+	 */
 	public float getPrice(WebElement element){
 		return Float.parseFloat(element.findElement(By.cssSelector(".currency-beforecomma")).getText()+"."+ element.findElements(By.cssSelector(".currency-decimals")).get(1).getText());
 	}
