@@ -1,0 +1,24 @@
+Jun 21, 2016 2:47:08 PM goeuro.search.sort.MainTest setup
+INFO: Launching the URL :http://www.goeuro.com/
+Jun 21, 2016 2:47:27 PM goeuro.search.sort.MainTest Test_For_Train_PriceList
+INFO: Entered the from and to cities :Berlin, Germany and Prague, Czech Republic
+Jun 21, 2016 2:47:31 PM goeuro.search.sort.MainTest Test_For_Train_PriceList
+INFO: Clicked Search button
+Jun 21, 2016 2:47:51 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row1 : 44.17
+Jun 21, 2016 2:47:52 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row2 : 44.17
+Jun 21, 2016 2:47:53 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row3 : 49.84
+Jun 21, 2016 2:47:54 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row4 : 49.84
+Jun 21, 2016 2:47:54 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row5 : 49.84
+Jun 21, 2016 2:47:55 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row6 : 66.83
+Jun 21, 2016 2:47:56 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row7 : 89.49
+Jun 21, 2016 2:47:57 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row8 : 99.23
+Jun 21, 2016 2:47:57 PM goeuro.search.sort.MainTest price_Validation
+INFO: The price for row9 : 103.76
